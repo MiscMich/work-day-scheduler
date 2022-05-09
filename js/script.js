@@ -80,13 +80,15 @@ function onPageLoad() {
 }
 
 $(document).ready(function () {
+  changeBackground()
+onPageLoad()
 getCurrentDate()
-changeBackground()
+
 
 
 $(".saveBtn").on("click", function(){
 userInput = $(this).siblings(".form-control").val().trim();
-hourSpan = $(this).siblings("input-group-prepend").text().trim();
+hourSpan = $(this).siblings(".input-group-prepend").text().trim();
 localStorage.setItem(hourSpan, JSON.stringify(userInput));
 
 
