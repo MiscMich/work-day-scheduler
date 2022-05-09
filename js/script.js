@@ -29,35 +29,47 @@ console.log(hour)
  let fourPm = $("16pm")
  let fivePm = $("17pm")
 
+load()
 
+function load() {
 
-function onPageLoad() {
-
-  var load9 = JSON.parse(localStorage.getItem("09:00 AM"));
-  nineAm.val(load9);
+  var load9 = JSON.parse(localStorage.getItem("9:00 AM"));
+  console.log(load9)
+   document.getElementById("9am").innerHTML = load9
 
   var load10 = JSON.parse(localStorage.getItem("10:00 AM"))
-  tenAm.val(load10)
+  document.getElementById("10am").innerHTML = load10
+  
   var load11 = JSON.parse(localStorage.getItem("11:00 AM"))
-  tenAm.val(load11)
+  document.getElementById("11am").innerHTML = load11
+  
   var load12 = JSON.parse(localStorage.getItem("12:00 PM"))
-  tenAm.val(load12)
+  document.getElementById("12pm").innerHTML = load12
+  
   var load13 = JSON.parse(localStorage.getItem("1:00 PM"))
-  tenAm.val(load13)
+  document.getElementById("13pm").innerHTML = load13
+
+  
+  
   var load14 = JSON.parse(localStorage.getItem("2:00 PM"))
-  tenAm.val(load14)
+  document.getElementById("14pm").innerHTML = load14
+  
+ 
   var load15 = JSON.parse(localStorage.getItem("3:00 PM"))
-  tenAm.val(load15)
+  
+  document.getElementById("15pm").innerHTML = load15
   var load16 = JSON.parse(localStorage.getItem("4:00 PM"))
-  tenAm.val(load16)
+  
+  document.getElementById("16pm").innerHTML = load16
   var load17 = JSON.parse(localStorage.getItem("5:00 PM"))
-  tenAm.val(load17)
+  document.getElementById("17pm").innerHTML = load17
   
 
 
 
 
 }
+
 
 
 
@@ -80,8 +92,9 @@ function onPageLoad() {
 }
 
 $(document).ready(function () {
+  load()
   changeBackground()
-onPageLoad()
+
 getCurrentDate()
 
 
@@ -95,7 +108,11 @@ localStorage.setItem(hourSpan, JSON.stringify(userInput));
 
 })
 
-
+$("#clearButton").on("click", function(){
+  localStorage.clear()
+  load()
+  changeBackground()
+})
 
 
 })
