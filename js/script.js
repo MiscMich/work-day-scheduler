@@ -1,5 +1,5 @@
 
-
+//gets current date from moment and displays it at the top
 
 function getCurrentDate() { let currentDate = moment().format("dddd, MMMM Do YYYY")
 
@@ -11,7 +11,7 @@ let htmlCurrentDate = document.getElementById('currentDay')
 
  $(htmlCurrentDate).text(currentDate)
 }
-
+//all variables
 let userInput;
 let hourSpan;
 
@@ -29,6 +29,8 @@ console.log(hour)
  let fourPm = $("16pm")
  let fivePm = $("17pm")
 
+
+ //loads page with local storage info if available
 load()
 
 function load() {
@@ -72,7 +74,7 @@ function load() {
 
 
 
-
+//changes background color for time blocks depending on time of day
  
  function changeBackground () {
       
@@ -91,6 +93,7 @@ function load() {
   });
 }
 
+//on document load, runs all functions andd also adds click functionality to buttons
 $(document).ready(function () {
   load()
   changeBackground()
